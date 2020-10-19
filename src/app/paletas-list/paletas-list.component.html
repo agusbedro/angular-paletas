@@ -1,5 +1,5 @@
 <h1 class="display-3"></h1>
-<table class="table table-sm">
+<table class="table table-sm text-center">
     <thead>
       <tr>
         <th scope="col">Modelo</th>
@@ -18,9 +18,13 @@
             <td>{{paleta.precio | currency:"USD"}}</td>
             <td><span class="badge badge-warning" *ngIf="paleta.stock == 0">SIN STOCK</span></td>
             <td>
+              <div class="input-group">
+
+              
               <button class="btn btn-light btn-sm" (click)="decrementar(paleta)">-</button>
               <input type="number" [(ngModel)]="paleta.cantidad" (keyup)="cambiarCantidad($event, paleta)">
               <button class="btn btn-light btn-sm" (click)="incrementar(paleta)">+</button>
+            </div>
             </td>
         </tr>    
     </tbody>

@@ -6,10 +6,10 @@
     <a class="navbar-brand" href="#">{{title}}</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/']">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Contacto<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/about']">Contacto<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Registrarse<span class="sr-only">(current)</span></a>
@@ -23,15 +23,11 @@
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8"><app-paletas-list></app-paletas-list></div>
-    <div class="cp;-4"></div>
-</div>
+  <router-outlet></router-outlet>
 </div>
 
 
 <footer class="page-footer font-small cyan darken-3">
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">padelStore 2020 © 
   </div>
 </footer>
