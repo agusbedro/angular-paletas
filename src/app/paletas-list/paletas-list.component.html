@@ -1,0 +1,27 @@
+<h1 class="display-3"></h1>
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Modelo</th>
+        <th scope="col">Peso</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col"></th>
+        <th scope="col">Comprar</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let paleta of paletas; let indice=index" [ngClass]="{'alert alert-success':paleta.promocion}">
+            <th scope="row">{{paleta.modelo}}</th>
+            <td>{{paleta.peso}}</td>
+            <td>{{paleta.descripcion}}</td>
+            <td>{{paleta.precio | currency:"USD"}}</td>
+            <td><span class="badge badge-warning" *ngIf="paleta.stock == 0">SIN STOCK</span></td>
+            <td>
+              <button class="btn btn-light btn-sm" (click)="decrementar(paleta)">-</button>
+              <input type="number" [(ngModel)]="paleta.cantidad" (keyup)="cambiarCantidad($event, paleta)">
+              <button class="btn btn-light btn-sm" (click)="incrementar(paleta)">+</button>
+            </td>
+        </tr>    
+    </tbody>
+  </table>
