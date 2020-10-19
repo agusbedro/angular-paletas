@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { StoreAboutComponent } from './store-about/store-about.component';
 import { StorePaletasComponent } from './store-paletas/store-paletas.component';
 import { StoreCarritoComponent } from './store-carrito/store-carrito.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StoreCarritoComponent } from './store-carrito/store-carrito.component';
     PaletasListComponent,
     StoreAboutComponent,
     StorePaletasComponent,
-    StoreCarritoComponent
+    StoreCarritoComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ export class PaletasListComponent implements OnInit {
   paletas: Paletas[] = [{
     modelo: "Match 2.0",
     peso: "360-375 g.",
-    descripcion: "Su composición en FIBER GLASS y la goma SOFT PERFORMANCE aportan el máximo confort para que disfrutes de cada golpe.",
+    descripcion: "Su composición en FIBER GLASS aporta el máximo confort en cada golpe.",
     precio: 14.99,
     imagen: "match 2.0.jpg",
     stock: 20,
@@ -22,7 +22,7 @@ export class PaletasListComponent implements OnInit {
   {
     modelo: "Drive 2.0",
     peso: "360-375 g.",
-    descripcion: "Su composición en FIBER GLASS y la goma EVA SOFT PERFORMANCE, aportan el máximo confort en cada golpe.",
+    descripcion: "La goma EVA SOFT PERFORMANCE aporta el máximo confort en cada golpe.",
     precio: 15.99,
     imagen: "drive_20_.jpg",
     stock: 29,
@@ -32,17 +32,17 @@ export class PaletasListComponent implements OnInit {
   {
     modelo: "Essnova Carbon 2.0",
     peso: "360-375 g.",
-    descripcion: "Su composición en carbono y la goma EVA SOFT PERFORMANCE proporcionan una potencia excepcional y un tacto realmente confortable..",
+    descripcion: "Su composición en carbono proporciona una potencia excepcional",
     precio: 24.99,
     imagen: "./imagenes/essnova-carbon.jpg",
-    stock: 14,
+    stock: 0,
     promocion: false,
     cantidad: 0
   },
   {
     modelo: "Carbon CTRL 2.0",
     peso: "360-375 g.",
-    descripcion: "Incorpora la tecnología Spin Blade que, junto con los Smart Holes Curve, permiten generar una mayor rotación de la pelota y favorece los efectos.",
+    descripcion: "Incorpora la tecnología Spin Blade que favorece los efectos.",
     precio: 28.25,
     imagen: "./imagenes/carbon_control.jpg",
     stock: 0,
@@ -52,7 +52,7 @@ export class PaletasListComponent implements OnInit {
   {
     modelo: "Adipower Soft 2.0",
     peso: "360-375 g.",
-    descripcion: "Pensada para el jugador que busca una pala con potencia y tacto SOFT. La adipower SOFT 2.0 es la pala más potente y confortable dentro de nuestra familia más tecnológica",
+    descripcion: "Pensada para el jugador que busca una pala con potencia y tacto SOFT.",
     precio: 39.89,
     imagen: "./imagenes/adipower_shot.jpg",
     stock: 13,
@@ -62,7 +62,7 @@ export class PaletasListComponent implements OnInit {
   {
     modelo: "Adipower Light 2.0",
     peso: "360-375 g.",
-    descripcion: "La adipower LIGHT 2.0 es la pala más potente con peso reducido dentro de nuestra familia más tecnológica.",
+    descripcion: "Es la pala más potente con peso reducido dentro de nuestra familia.",
     precio: 39.99,
     imagen: "./imagenes/adipower_light.jpg",
     stock: 27,
@@ -72,7 +72,7 @@ export class PaletasListComponent implements OnInit {
   {
     modelo: "Adipower WPT",
     peso: "360-375 g.",
-    descripcion: "Sensación inmejorable de golpeo, sacando el máximo partido a cada toque técnico. Junto a la tecnología EXOSKELETON insertada en el corazón, conseguirás en tus golpes la máxima potencia.",
+    descripcion: "Con la tecnología EXOSKELETON insertada en el corazón, conseguirás tu máxima potencia.",
     precio: 18.79,
     imagen: "./imagenes/adipower-wpt.jpg",
     stock: 12,
@@ -127,9 +127,9 @@ export class PaletasListComponent implements OnInit {
     if(event.target.value < paleta.stock){
       paleta.cantidad = event.target.value;
     }
-   else if(event.target.value > paleta.stock){
+    else if(event.target.value > paleta.stock){
      paleta.cantidad = paleta.stock;
-   }
+    }
   }
-
+  
 }
