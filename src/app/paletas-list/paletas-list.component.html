@@ -1,4 +1,4 @@
-<h1 class="display-3"></h1>
+<h1 class="display-4 text-center">PALETAS</h1>
 <table class="table table-sm text-center">
     <thead>
       <tr>
@@ -18,13 +18,8 @@
             <td>{{paleta.precio | currency:"USD"}}</td>
             <td><span class="badge badge-warning" *ngIf="paleta.stock == 0">SIN STOCK</span></td>
             <td>
-              <div class="list-group list-group-horizontal">
-
-              
-              <button class="btn btn-light btn-sm list-group-item" (click)="decrementar(paleta)">-</button>
-              <input type="text" [(ngModel)]="paleta.cantidad" (keyup)="cambiarCantidad($event, paleta)" class="list-group-item">
-              <button class="btn btn-light btn-sm list-group-item" (click)="incrementar(paleta)">+</button>
-            </div>
+              <app-input-number *ngIf="paleta.stock != 0" [(cantidad)]="paleta.cantidad" [max]="paleta.stock" (maxAlcanzado)="maxAlcanzado($event)"></app-input-number>
+              <button type="button" class="btn btn-primary" (click)="agregarAlCarrito(paleta)">Agregar al carrito</button>
             </td>
         </tr>    
     </tbody>

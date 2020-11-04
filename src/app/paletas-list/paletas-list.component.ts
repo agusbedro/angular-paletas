@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationError } from '@angular/router';
+import { PadelCartService } from '../padel-cart.service';
 import { Paletas } from './paletas';
 
 @Component({
@@ -100,36 +101,22 @@ export class PaletasListComponent implements OnInit {
     cantidad: 0
   }];
 
-  constructor() { }
+  constructor(private carrito: PadelCartService) { 
+  }
 
   ngOnInit(): void {
   }
 
-  decrementar(paleta: Paletas): void{
-   if(paleta.cantidad > 0){
-    paleta.cantidad--;
-   }
+  agregarAlCarrito(paleta: Paletas): void{
+    this.carrito.agregarAlCarrito(paleta);
+    paleta.stock -= paleta.cantidad;
+    paleta.cantidad = 0;
+    console.log(paleta.stock);
   }
 
-  incrementar(paleta: Paletas): void{
-    if(paleta.cantidad<paleta.stock){
-      paleta.cantidad++;
-    }
+  maxAlcanzado(m: string){
+    alert(m);
   }
+ 
 
-  cambiarCantidad(event, paleta: Paletas): void{
-    //tengo que chequear que lo que ingresa el usuario no sea mayor al stock
-    //      si es menor
-    //            se vuelve la cantidad 
-    //      si es mayor
-    //            que se vuelva la cantidad q haya en stock
-    //                y que avise que el stock llega maximo a esa cantidad
-    if(event.target.value < paleta.stock){
-      paleta.cantidad = event.target.value;
-    }
-    else if(event.target.value > paleta.stock){
-     paleta.cantidad = paleta.stock;
-    }
-  }
-  
 }

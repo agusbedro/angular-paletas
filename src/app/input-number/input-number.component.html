@@ -1,0 +1,5 @@
+<div class="list-group list-group-horizontal">
+    <button class="btn btn-light btn-sm list-group-item" (click)="decrementar()">-</button>
+    <input type="text" [(ngModel)]="cantidad" (keyup)="cambiarCantidad($event)" class="list-group-item">
+    <button class="btn btn-light btn-sm list-group-item" (click)="incrementar()">+</button>
+</div>

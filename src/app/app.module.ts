@@ -10,6 +10,7 @@ import { StoreAboutComponent } from './store-about/store-about.component';
 import { StorePaletasComponent } from './store-paletas/store-paletas.component';
 import { StoreCarritoComponent } from './store-carrito/store-carrito.component';
 import { RegisterComponent } from './register/register.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegisterComponent } from './register/register.component';
     StoreAboutComponent,
     StorePaletasComponent,
     StoreCarritoComponent,
-    RegisterComponent
+    RegisterComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

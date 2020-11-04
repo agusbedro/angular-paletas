@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { observable } from 'rxjs';
+import { PadelCartService } from '../padel-cart.service';
+import { Paletas } from '../paletas-list/paletas';
 
 @Component({
   selector: 'app-store-carrito',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreCarritoComponent implements OnInit {
 
-  constructor() { }
+  listaDeCompras: Paletas[];
+  constructor(private carrito: PadelCartService) {
+    this.carrito.listaDeCompras.subscribe(observable => this.listaDeCompras = observable);
+   }
 
   ngOnInit(): void {
   }
 
+  obtenerMontoTotal(){
+    let monto = 0;
+    for (let paleta of this.listaDeCompras){
+      monto += paleta.precio*paleta.cantidad;
+    }
+    return monto;
+  }
 }
